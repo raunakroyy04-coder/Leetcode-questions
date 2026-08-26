@@ -31,8 +31,9 @@ class Solution {
             if(!st2.isEmpty()){
                 sum+=st2.pop();
             }
+            //yaha se humlogo ne carry nikL liya
             carry=sum/10;
-            ListNode node=new ListNode(sum%10);
+            ListNode node=new ListNode(sum%10);//or yaha se remainder hi bs liya
             node.next=head;
             head=node; 
         }
