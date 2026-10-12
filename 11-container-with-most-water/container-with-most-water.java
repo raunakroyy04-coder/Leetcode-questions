@@ -2,19 +2,25 @@ class Solution {
     public int maxArea(int[] height) {
         int left = 0;
         int right = height.length - 1;
-        int maxarea=0;
-        while(left<right){
-            int width=right-left;
-            int minheight=Math.min(height[left],height[right]);
-            int area=width*minheight;
+       int maxArea = 0;
 
-            maxarea=Math.max(area,maxarea);
+        while (left < right) {
+            // Calculate the area between the two lines
+            int width = right - left;
+            int minHeight = Math.min(height[left], height[right]);
+            int area = width * minHeight;
 
-            if(height[left]<height[right]){
+            // Update maxArea if this is larger
+            maxArea = Math.max(maxArea, area);
+
+            // Move the pointer pointing to the shorter line
+            if (height[left] < height[right]) {
                 left++;
+            } else {
+                right--;
             }
-            else right--;
         }
-        return maxarea;
+
+        return maxArea;
     }
 }
