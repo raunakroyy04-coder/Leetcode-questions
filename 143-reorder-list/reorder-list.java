@@ -12,12 +12,15 @@ class Solution {
     public void reorderList(ListNode head) {
         if(head.next==null||head.next.next==null) return;
         ListNode slow=head;
-        ListNode fast=head;
+        ListNode fast=head; 
+
+        //mid
         while(fast!=null&&fast.next!=null){
             slow=slow.next;
             fast =fast.next.next;
 
-        }
+        }  
+        //reverse the secode half
          ListNode prev=null;
     ListNode curr=slow;
     ListNode next;
